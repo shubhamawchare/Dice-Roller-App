@@ -42,10 +42,10 @@ dice-roller-app/
 ## 🌐 Live Demo
 
 **Hosted via GitHub Pages:**  
-👉 [Click here to try it live](https://shubhamawchare.github.io/dice-roller-app)
+👉 [Click here to try it live](https://shubhamawchare.github.io/Dice-Roller-App)
 
 
 ## 📥 Setup Locally
 
-git clone https://github.com/shubhamawchare/dice-roller-app.git
+git clone https://github.com/shubhamawchare/Dice-Roller-App.git
 cd dice-roller-app
