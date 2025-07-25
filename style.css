@@ -1,38 +1,76 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
-  text-align: center;
+/* Global Reset */
+* {
   margin: 0;
-  padding: 50px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f0f0;
+  color: #333;
+  transition: all 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
 }
 
 .container {
+  max-width: 500px;
+  margin: 60px auto;
   background: white;
-  max-width: 400px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .container {
+  background: #1e1e1e;
 }
 
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .dice-box {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 40px;
   margin-bottom: 20px;
 }
 
 .dice-box img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.dice-roll {
+  animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+#result {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 10px 0 20px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
   background: #3498db;
   color: white;
@@ -45,22 +83,57 @@ button:hover {
   background: #2980b9;
 }
 
-@keyframes shake {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(10deg); }
-  50% { transform: rotate(-10deg); }
-  75% { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
+/* Toggle Switch */
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.dice-roll {
-  animation: shake 0.5s;
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
 }
 
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-#result {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #2c3e50;
+.slider {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 24px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #4CAF50;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#themeLabel {
+  font-size: 14px;
 }

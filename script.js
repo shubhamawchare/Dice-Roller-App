@@ -28,3 +28,12 @@ function rollDice() {
     resultText.textContent = "🤝 It's a Draw!";
   }
 }
+
+// Light/Dark mode toggle
+const modeToggle = document.getElementById("modeToggle");
+const themeLabel = document.getElementById("themeLabel");
+
+modeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+  themeLabel.textContent = modeToggle.checked ? "Dark Mode" : "Light Mode";
+});
