@@ -47,5 +47,5 @@ dice-roller-app/
 
 ## 📥 Setup Locally
 
-git clone https://github.com/yourusername/dice-roller-app.git
+git clone https://github.com/shubhamawchare/dice-roller-app.git
 cd dice-roller-app
